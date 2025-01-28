@@ -3,12 +3,12 @@ module.exports = {
     inputDirectory: './input',
     outputFile: './output/erp-import.csv',
     columnMappings: {
-      'Number': (_, index) => `SB${String(index + 1).padStart(4, '0')}`,
+      'Number': (_, index) => `PF-SB-${String(index + 1).padStart(5, '0')}`,
       'Description': (folderName) => {
         return folderName;
       },
       'Type': () => '1',
-      'GroupName': () => 'Spectacle Blind',
+      'GroupName': () => 'Spectacle Blind - SB',
       'Weight': (folderName) => {
         const match = folderName.match(/NPS\s*(\d+(\.\d+)?)#/);
         if (!match) throw new Error('Invalid folder format');
@@ -29,3 +29,8 @@ module.exports = {
       'SupplierNumber': () => '2'
     }
   };
+Ønkset navn: 
+  npsSize, pressureclass, FF, "Specticleblind"
+
+  //modellbilde fra pdf inkluderes '
+  //inkludere step fil. 
